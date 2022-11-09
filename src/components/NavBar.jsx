@@ -309,17 +309,20 @@ const NAV_ITEMS = [
     ],
   },
   {
-    label: "Recruits",
+    label: "Community",
     children: [
       {
-        label: "커뮤니티",
-        subLabel: "(ref. 필름메이커스)",
+        label: "자유게시판",
+        href: "#",
+      },
+      {
+        label: "참여극장",
         href: "#",
       },
     ],
   },
   {
-    label: "NFTs",
+    label: "Recruits",
     children: [
       {
         label: "배우 / 스탭",

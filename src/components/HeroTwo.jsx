@@ -26,15 +26,32 @@ export default function CallToActionWithAnnotation() {
             fontSize={{ base: "2xl", sm: "4xl", md: "6xl" }}
             lineHeight={"110%"}
           >
-            비밀?? <br />
-            <Text as={"span"} color={"pink.400"}>
-              오직 당신만의
+            구인/구직 게시판
+            <br />
+            <br />
+            <Text
+              fontSize={"3xl"}
+              alignSelf={""}
+              as={"span"}
+              color={"green.400"}
+            >
+              요즘 fancy한 영화인들은&nbsp;&nbsp;
+              <Text as={"span"} fontSize={"4xl"} color={"orange.400"}>
+                CFN&nbsp;
+              </Text>
+              으로 구인구직한다며?!
             </Text>
           </Heading>
-          <Text color={"gray.500"}>
-            항상 마음속으로만 간직한 이야기하지만 기억하고 싶었던 이야기 누군가
-            볼까 두려웠던 속마음의 이야기 이제는 비담에 담아주시면 됩니다. 어느
-            누구도 볼 수 없습니다. 오로지 당신만 볼 수 있습니다.
+          <Text textAlign={"left"} color={"gray.600"} fontSize={"3xl"}>
+            기존의 text-only 비효율적인 구인 / 구직 No way
+            <Text as={"span"} fontSize={"5xl"}>
+              👋
+            </Text>
+            <br />
+            CFN을 만나고 나의 성공시대 시작됐따~~~
+            <Text as={"span"} fontSize={"5xl"}>
+              🎶
+            </Text>
           </Text>
           <Stack
             direction={"column"}
@@ -42,22 +59,7 @@ export default function CallToActionWithAnnotation() {
             align={"center"}
             alignSelf={"center"}
             position={"relative"}
-          >
-            <Button
-              colorScheme={"green"}
-              bg={"green.400"}
-              rounded={"full"}
-              px={6}
-              _hover={{
-                bg: "green.500",
-              }}
-            >
-              비담 시작하기
-            </Button>
-            <Button variant={"link"} colorScheme={"blue"} size={"sm"}>
-              비담 알아보기
-            </Button>
-          </Stack>
+          ></Stack>
         </Stack>
       </Flex>
     </>

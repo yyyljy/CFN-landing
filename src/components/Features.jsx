@@ -36,7 +36,7 @@ const Feature = ({ text, icon, iconBg }) => {
 export default function SplitWithImage() {
   return (
     <Flex
-      justify={"center"}
+      justify={"space-around"}
       py={12}
       px={{ base: "20px", sm: "30px", lg: "50px" }}
       h={"100vh"}

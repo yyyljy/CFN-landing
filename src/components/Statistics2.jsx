@@ -74,13 +74,13 @@ export default function BasicStatistics() {
           bgClip={"text"}
           as={"span"}
         >
-          Crowdfunding Film with NFT
+          NFTs
         </Text>
       </chakra.h1>
       <SimpleGrid columns={{ base: 2, md: 3 }} spacing={{ base: 5, lg: 8 }}>
         <StatsCard
-          title={"독립영화 제작 비용"}
-          stat={"크라우드 펀딩"}
+          title={"배우/스텝"}
+          stat={"사진"}
           icon={<GiTakeMyMoney size={"5em"} />}
         />
         <StatsCard

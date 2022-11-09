@@ -29,14 +29,14 @@ export default function CallToActionWithIllustration() {
           </Text>
           와&nbsp;
           <Text as={"span"} color={"green.400"}>
-            프로필
+            프로필&nbsp;
           </Text>
-          을&nbsp;
+          제작은&nbsp;
           <br />
           <Text as={"span"} color={"orange.400"}>
             CFN
           </Text>
-          과 만들어요
+          과 가보자고~🤸
         </Heading>
 
         <Stack spacing={6} direction={"row"}></Stack>
