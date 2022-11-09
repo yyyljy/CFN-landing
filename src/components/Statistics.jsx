@@ -6,6 +6,7 @@ import {
   Stat,
   StatLabel,
   StatNumber,
+  Text,
   useColorModeValue,
 } from "@chakra-ui/react";
 
@@ -20,8 +21,8 @@ function StatsCard(props) {
       px={{ base: 2, md: 4 }}
       py={"5"}
       shadow={"xl"}
-      border={"1px solid"}
-      borderColor={useColorModeValue("gray.800", "gray.500")}
+      border={"3px solid"}
+      borderColor={useColorModeValue("pink.400", "pink.300")}
       rounded={"lg"}
     >
       <Flex justifyContent={"space-between"}>
@@ -47,32 +48,54 @@ function StatsCard(props) {
 
 export default function BasicStatistics() {
   return (
-    <Box maxW="7xl" mx={"auto"} pt={5} px={{ base: 2, sm: 12, md: 17 }}>
+    <Flex
+      direction={"column"}
+      px={{ base: 2, sm: 12, md: 17 }}
+      justify={"center"}
+      align={"center"}
+      h={"100vh"}
+      pos={"relative"}
+    >
+      <Box
+        w={"25%"}
+        h={"25%"}
+        bgGradient={"linear(to-r,#829123,#129439)"}
+        pos={"absolute"}
+        zIndex={-3}
+        filter={"blur(100px)"}
+      ></Box>
       <chakra.h1
         textAlign={"center"}
         fontSize={"4xl"}
         py={10}
         fontWeight={"bold"}
       >
-        Our company is expanding, you could be too.
+        <Text
+          bgGradient={"linear(to-r, #7928CA, #FF0080)"}
+          bgClip={"text"}
+          as={"span"}
+        >
+          비담
+        </Text>
+        과 함께라면
       </chakra.h1>
       <SimpleGrid columns={{ base: 1, md: 3 }} spacing={{ base: 5, lg: 8 }}>
         <StatsCard
-          title={"Users"}
-          stat={"5,000"}
+          title={"심리적 안정감"}
+          stat={"상승"}
           icon={<BsPerson size={"3em"} />}
         />
         <StatsCard
-          title={"Servers"}
-          stat={"1,000"}
+          title={"관리해야할 계정"}
+          stat={"1"}
           icon={<FiServer size={"3em"} />}
         />
         <StatsCard
-          title={"Datacenters"}
+          title={"보상으로 제공하는 NFT"}
           stat={"7"}
           icon={<GoLocation size={"3em"} />}
         />
       </SimpleGrid>
-    </Box>
+    </Flex>
   );
 }

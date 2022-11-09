@@ -1,212 +1,110 @@
 import {
-  Box,
-  Stack,
-  HStack,
+  SimpleGrid,
+  Image,
+  Flex,
   Heading,
   Text,
-  VStack,
+  Stack,
+  StackDivider,
+  Icon,
   useColorModeValue,
-  List,
-  ListItem,
-  ListIcon,
-  Button,
 } from "@chakra-ui/react";
-import { FaCheckCircle } from "react-icons/fa";
+import { IoLogoBitcoin, IoWalletSharp, IoJournalSharp } from "react-icons/io5";
+import securityImage from "@assets/security.png";
 
-function PriceWrapper({ children }) {
+const Feature = ({ text, icon, iconBg }) => {
   return (
-    <Box
-      mb={4}
-      shadow="base"
-      borderWidth="1px"
-      alignSelf={{ base: "center", lg: "flex-start" }}
-      borderColor={useColorModeValue("gray.200", "gray.500")}
-      borderRadius={"xl"}
-    >
-      {children}
-    </Box>
-  );
-}
-
-export default function ThreeTierPricing() {
-  return (
-    <Box py={12}>
-      <VStack spacing={2} textAlign="center">
-        <Heading as="h1" fontSize="4xl">
-          Plans that fit your need
-        </Heading>
-        <Text fontSize="lg" color={"gray.500"}>
-          Start with 14-day free trial. No credit card needed. Cancel at
-          anytime.
-        </Text>
-      </VStack>
-      <Stack
-        direction={{ base: "column", md: "row" }}
-        textAlign="center"
-        justify="center"
-        spacing={{ base: 4, lg: 10 }}
-        py={10}
+    <Stack direction={"row"} align={"center"}>
+      <Flex
+        w={8}
+        h={8}
+        align={"center"}
+        justify={"center"}
+        rounded={"full"}
+        bg={iconBg}
       >
-        <PriceWrapper>
-          <Box py={4} px={12}>
-            <Text fontWeight="500" fontSize="2xl">
-              Hobby
-            </Text>
-            <HStack justifyContent="center">
-              <Text fontSize="3xl" fontWeight="600">
-                $
-              </Text>
-              <Text fontSize="5xl" fontWeight="900">
-                79
-              </Text>
-              <Text fontSize="3xl" color="gray.500">
-                /month
-              </Text>
-            </HStack>
-          </Box>
-          <VStack
-            bg={useColorModeValue("gray.50", "gray.700")}
-            py={4}
-            borderBottomRadius={"xl"}
-          >
-            <List spacing={3} textAlign="start" px={12}>
-              <ListItem>
-                <ListIcon as={FaCheckCircle} color="green.500" />
-                unlimited build minutes
-              </ListItem>
-              <ListItem>
-                <ListIcon as={FaCheckCircle} color="green.500" />
-                Lorem, ipsum dolor.
-              </ListItem>
-              <ListItem>
-                <ListIcon as={FaCheckCircle} color="green.500" />
-                5TB Lorem, ipsum dolor.
-              </ListItem>
-            </List>
-            <Box w="80%" pt={7}>
-              <Button w="full" colorScheme="red" variant="outline">
-                Start trial
-              </Button>
-            </Box>
-          </VStack>
-        </PriceWrapper>
+        {icon}
+      </Flex>
+      <Text fontWeight={600}>{text}</Text>
+    </Stack>
+  );
+};
 
-        <PriceWrapper>
-          <Box position="relative">
-            <Box
-              position="absolute"
-              top="-16px"
-              left="50%"
-              style={{ transform: "translate(-50%)" }}
-            >
-              <Text
-                textTransform="uppercase"
-                bg={useColorModeValue("red.300", "red.700")}
-                px={3}
-                py={1}
-                color={useColorModeValue("gray.900", "gray.300")}
-                fontSize="sm"
-                fontWeight="600"
-                rounded="xl"
-              >
-                Most Popular
-              </Text>
-            </Box>
-            <Box py={4} px={12}>
-              <Text fontWeight="500" fontSize="2xl">
-                Growth
-              </Text>
-              <HStack justifyContent="center">
-                <Text fontSize="3xl" fontWeight="600">
-                  $
-                </Text>
-                <Text fontSize="5xl" fontWeight="900">
-                  149
-                </Text>
-                <Text fontSize="3xl" color="gray.500">
-                  /month
-                </Text>
-              </HStack>
-            </Box>
-            <VStack
-              bg={useColorModeValue("gray.50", "gray.700")}
-              py={4}
-              borderBottomRadius={"xl"}
-            >
-              <List spacing={3} textAlign="start" px={12}>
-                <ListItem>
-                  <ListIcon as={FaCheckCircle} color="green.500" />
-                  unlimited build minutes
-                </ListItem>
-                <ListItem>
-                  <ListIcon as={FaCheckCircle} color="green.500" />
-                  Lorem, ipsum dolor.
-                </ListItem>
-                <ListItem>
-                  <ListIcon as={FaCheckCircle} color="green.500" />
-                  5TB Lorem, ipsum dolor.
-                </ListItem>
-                <ListItem>
-                  <ListIcon as={FaCheckCircle} color="green.500" />
-                  5TB Lorem, ipsum dolor.
-                </ListItem>
-                <ListItem>
-                  <ListIcon as={FaCheckCircle} color="green.500" />
-                  5TB Lorem, ipsum dolor.
-                </ListItem>
-              </List>
-              <Box w="80%" pt={7}>
-                <Button w="full" colorScheme="red">
-                  Start trial
-                </Button>
-              </Box>
-            </VStack>
-          </Box>
-        </PriceWrapper>
-        <PriceWrapper>
-          <Box py={4} px={12}>
-            <Text fontWeight="500" fontSize="2xl">
-              Scale
-            </Text>
-            <HStack justifyContent="center">
-              <Text fontSize="3xl" fontWeight="600">
-                $
-              </Text>
-              <Text fontSize="5xl" fontWeight="900">
-                349
-              </Text>
-              <Text fontSize="3xl" color="gray.500">
-                /month
-              </Text>
-            </HStack>
-          </Box>
-          <VStack
-            bg={useColorModeValue("gray.50", "gray.700")}
-            py={4}
-            borderBottomRadius={"xl"}
+export default function SplitWithImage() {
+  return (
+    <Flex
+      justify={"center"}
+      py={12}
+      px={{ base: "20px", sm: "30px", lg: "50px" }}
+      h={"100vh"}
+      align={"center"}
+    >
+      <SimpleGrid
+        columns={{ base: 1, md: 2 }}
+        spacing={10}
+        alignItems={"center"}
+      >
+        <Stack spacing={4}>
+          <Text
+            color={"purple.50"}
+            fontWeight={600}
+            fontSize={"sm"}
+            bg={"purple.500"}
+            p={2}
+            alignSelf={"flex-start"}
+            rounded={"md"}
           >
-            <List spacing={3} textAlign="start" px={12}>
-              <ListItem>
-                <ListIcon as={FaCheckCircle} color="green.500" />
-                unlimited build minutes
-              </ListItem>
-              <ListItem>
-                <ListIcon as={FaCheckCircle} color="green.500" />
-                Lorem, ipsum dolor.
-              </ListItem>
-              <ListItem>
-                <ListIcon as={FaCheckCircle} color="green.500" />
-                5TB Lorem, ipsum dolor.
-              </ListItem>
-            </List>
-            <Box w="80%" pt={7}>
-              <Button w="full" colorScheme="red" variant="outline">
-                Start trial
-              </Button>
-            </Box>
-          </VStack>
-        </PriceWrapper>
-      </Stack>
-    </Box>
+            비담과 함께라면
+          </Text>
+          <Heading>당신의 비밀을 간직할 수 있습니다.</Heading>
+          <Text color={"gray.500"} fontSize={"lg"}>
+            어떤 비밀을 간직할 수 있는지 알아볼까요?
+          </Text>
+          <Stack
+            spacing={4}
+            divider={
+              <StackDivider
+                borderColor={useColorModeValue("gray.100", "gray.700")}
+              />
+            }
+          >
+            <Feature
+              icon={
+                <Icon as={IoWalletSharp} color={"purple.500"} w={5} h={5} />
+              }
+              iconBg={"purple.100"}
+              text={
+                "계좌 정보와 금융 정보를 비담에서 보관하고 관리할 수 있습니다."
+              }
+            />
+            <Feature
+              icon={
+                <Icon as={IoLogoBitcoin} color={"purple.100"} w={5} h={5} />
+              }
+              iconBg={"purple.500"}
+              text={"블록체인 토큰 또한 비담에서 종합 관리할 수 있습니다."}
+            />
+            <Feature
+              icon={
+                <Icon as={IoJournalSharp} color={"purple.500"} w={5} h={5} />
+              }
+              iconBg={"purple.100"}
+              text={
+                "누구한테도 보여주고 싶지 않은 비밀 이야기 비담에서 간직할 수 있습니다."
+              }
+            />
+          </Stack>
+        </Stack>
+        <Flex>
+          <Image
+            rounded={"md"}
+            alt={"feature image"}
+            src={securityImage}
+            objectFit={"cover"}
+            maxH={"330px"}
+          />
+        </Flex>
+      </SimpleGrid>
+    </Flex>
   );
 }

@@ -26,9 +26,9 @@ export default function WithSubnavigation() {
   const { isOpen, onToggle } = useDisclosure();
 
   return (
-    <Box>
+    <Box pos={"fixed"} top={0} width={"100%"} zIndex={999}>
       <Flex
-        bg={useColorModeValue("white", "gray.800")}
+        bg={"rgba(255, 255, 255, 0.6)"}
         color={useColorModeValue("gray.600", "white")}
         minH={"60px"}
         py={{ base: 2 }}
@@ -37,6 +37,7 @@ export default function WithSubnavigation() {
         borderStyle={"solid"}
         borderColor={useColorModeValue("gray.200", "gray.900")}
         align={"center"}
+        backdropFilter={"saturate(50%) blur(7px)"}
       >
         <Flex
           flex={{ base: 1, md: "auto" }}
@@ -55,10 +56,10 @@ export default function WithSubnavigation() {
         <Flex flex={{ base: 1 }} justify={{ base: "center", md: "start" }}>
           <Text
             textAlign={useBreakpointValue({ base: "center", md: "left" })}
-            fontFamily={"heading"}
+            fontFamily={"SEBANG_Gothic_Bold"}
             color={useColorModeValue("gray.800", "white")}
           >
-            Logo
+            CFN
           </Text>
 
           <Flex display={{ base: "none", md: "flex" }} ml={10}>
@@ -72,15 +73,6 @@ export default function WithSubnavigation() {
           direction={"row"}
           spacing={6}
         >
-          <Button
-            as={"a"}
-            fontSize={"sm"}
-            fontWeight={400}
-            variant={"link"}
-            href={"#"}
-          >
-            Sign In
-          </Button>
           <Button
             display={{ base: "none", md: "inline-flex" }}
             fontSize={"sm"}
@@ -106,7 +98,7 @@ export default function WithSubnavigation() {
 
 const DesktopNav = () => {
   const linkColor = useColorModeValue("gray.600", "gray.200");
-  const linkHoverColor = useColorModeValue("gray.800", "white");
+  const linkHoverColor = useColorModeValue("orange.500", "white");
   const popoverContentBgColor = useColorModeValue("white", "gray.800");
 
   return (
@@ -118,12 +110,13 @@ const DesktopNav = () => {
               <Link
                 p={2}
                 href={navItem.href ?? "#"}
-                fontSize={"sm"}
+                fontSize={"md"}
                 fontWeight={500}
                 color={linkColor}
                 _hover={{
                   textDecoration: "none",
                   color: linkHoverColor,
+                  bg: "pink.50",
                 }}
               >
                 {navItem.label}
@@ -167,7 +160,7 @@ const DesktopSubNav = ({ label, href, subLabel }) => {
         <Box>
           <Text
             transition={"all .3s ease"}
-            _groupHover={{ color: "pink.400" }}
+            _groupHover={{ color: "orange.400" }}
             fontWeight={500}
           >
             {label}
@@ -183,7 +176,7 @@ const DesktopSubNav = ({ label, href, subLabel }) => {
           align={"center"}
           flex={1}
         >
-          <Icon color={"pink.400"} w={5} h={5} as={ChevronRightIcon} />
+          <Icon color={"orange.400"} w={5} h={5} as={ChevronRightIcon} />
         </Flex>
       </Stack>
     </Link>
@@ -259,7 +252,7 @@ const MobileNavItem = ({ label, children, href }) => {
 
 const NAV_ITEMS = [
   {
-    label: "Inspiration",
+    label: "CrowdFunding",
     children: [
       {
         label: "Explore Design Work",
@@ -274,7 +267,7 @@ const NAV_ITEMS = [
     ],
   },
   {
-    label: "Find Work",
+    label: "Profiles",
     children: [
       {
         label: "Job Board",
@@ -289,11 +282,11 @@ const NAV_ITEMS = [
     ],
   },
   {
-    label: "Learn Design",
+    label: "Portfoilio",
     href: "#",
   },
   {
-    label: "Hire Designers",
+    label: "Recruits",
     href: "#",
   },
 ];

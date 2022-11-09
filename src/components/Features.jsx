@@ -9,12 +9,10 @@ import {
   StackDivider,
   Icon,
   useColorModeValue,
+  Box,
 } from "@chakra-ui/react";
-import {
-  IoAnalyticsSharp,
-  IoLogoBitcoin,
-  IoSearchSharp,
-} from "react-icons/io5";
+import { IoLogoBitcoin, IoWalletSharp, IoJournalSharp } from "react-icons/io5";
+import securityImage from "@assets/security.png";
 
 const Feature = ({ text, icon, iconBg }) => {
   return (
@@ -36,7 +34,13 @@ const Feature = ({ text, icon, iconBg }) => {
 
 export default function SplitWithImage() {
   return (
-    <Container maxW={"5xl"} py={12}>
+    <Flex
+      justify={"center"}
+      py={12}
+      px={{ base: "20px", sm: "30px", lg: "50px" }}
+      h={"100vh"}
+      align={"center"}
+    >
       <SimpleGrid columns={{ base: 1, md: 2 }} spacing={10}>
         <Stack spacing={4}>
           <Text
@@ -44,17 +48,16 @@ export default function SplitWithImage() {
             color={"blue.400"}
             fontWeight={600}
             fontSize={"sm"}
-            bg={useColorModeValue("blue.50", "blue.900")}
+            bg={useColorModeValue("green.100", "pink.600")}
             p={2}
             alignSelf={"flex-start"}
             rounded={"md"}
           >
-            Our Story
+            비담과 함께라면
           </Text>
-          <Heading>A digital Product design agency</Heading>
+          <Heading>당신의 비밀을 간직할 수 있습니다.</Heading>
           <Text color={"gray.500"} fontSize={"lg"}>
-            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-            nonumy eirmod tempor invidunt ut labore
+            어떤 비밀을 간직하고 싶으신가요
           </Text>
           <Stack
             spacing={4}
@@ -66,36 +69,38 @@ export default function SplitWithImage() {
           >
             <Feature
               icon={
-                <Icon as={IoAnalyticsSharp} color={"yellow.500"} w={5} h={5} />
+                <Icon as={IoWalletSharp} color={"purple.500"} w={5} h={5} />
               }
               iconBg={useColorModeValue("yellow.100", "yellow.900")}
-              text={"Business Planning"}
+              text={
+                "계좌 정보와 금융 정보를 비담에서 보관하고 관리할 수 있습니다."
+              }
             />
             <Feature
               icon={<Icon as={IoLogoBitcoin} color={"green.500"} w={5} h={5} />}
               iconBg={useColorModeValue("green.100", "green.900")}
-              text={"Financial Planning"}
+              text={"블록체인 토큰 또한 비담에서 종합 관리할 수 있습니다."}
             />
             <Feature
               icon={
-                <Icon as={IoSearchSharp} color={"purple.500"} w={5} h={5} />
+                <Icon as={IoJournalSharp} color={"purple.500"} w={5} h={5} />
               }
               iconBg={useColorModeValue("purple.100", "purple.900")}
-              text={"Market Analysis"}
+              text={
+                "누구한테도 보여주고 싶지 않은 비밀 이야기 비담에서 간직할 수 있습니다."
+              }
             />
           </Stack>
         </Stack>
         <Flex>
           <Image
-            rounded={"md"}
+            rounded={"full"}
             alt={"feature image"}
-            src={
-              "https://images.unsplash.com/photo-1554200876-56c2f25224fa?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
-            }
+            src={securityImage}
             objectFit={"cover"}
           />
         </Flex>
       </SimpleGrid>
-    </Container>
+    </Flex>
   );
 }

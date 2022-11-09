@@ -1,14 +1,4 @@
-import {
-  ChakraProvider,
-  Box,
-  Container,
-  Flex,
-  SimpleGrid,
-  Text,
-  VStack,
-  StackDivider,
-  Heading,
-} from "@chakra-ui/react";
+import { ChakraProvider } from "@chakra-ui/react";
 import Hero from "@components/Hero";
 import NavBar from "@components/NavBar";
 import Features from "@components/Features";
