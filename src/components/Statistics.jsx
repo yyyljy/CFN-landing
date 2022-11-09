@@ -21,7 +21,7 @@ function StatsCard(props) {
       py={"5"}
       shadow={"xl"}
       border={"3px solid"}
-      borderColor={useColorModeValue("pink.300", "pink.300")}
+      borderColor={useColorModeValue("orange.400", "orange.400")}
       rounded={"lg"}
     >
       <Flex justifyContent={"space-around"}>
@@ -58,19 +58,19 @@ export default function BasicStatistics() {
       <Box
         w={"60%"}
         h={"25%"}
-        bgGradient={"linear(to-b,white,pink.200)"}
+        bgGradient={"linear(to-b,white,orange.300)"}
         pos={"absolute"}
         zIndex={-3}
         filter={"blur(150px)"}
       ></Box>
       <chakra.h1
         textAlign={"center"}
-        fontSize={"4xl"}
+        fontSize={"5xl"}
         py={10}
         fontWeight={"bold"}
       >
         <Text
-          bgGradient={"linear(to-r, orange.300, green.400)"}
+          bgGradient={"linear(to-r, orange.500, green.400)"}
           bgClip={"text"}
           as={"span"}
         >

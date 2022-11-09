@@ -38,17 +38,17 @@ export default function SplitWithImage() {
     <Flex
       justify={"space-around"}
       py={12}
-      px={{ base: "20px", sm: "30px", lg: "50px" }}
+      px={{ base: "10px", sm: "40px", lg: "150px" }}
       h={"100vh"}
       align={"center"}
     >
-      <SimpleGrid columns={{ base: 1, md: 2 }} spacing={10}>
+      <SimpleGrid columns={{ base: 1, md: 2 }} spacing={5}>
         <Stack spacing={4}>
           <Text
             textTransform={"uppercase"}
             color={"white"}
             fontWeight={600}
-            fontSize={"lg"}
+            fontSize={"4xl"}
             bg={useColorModeValue("orange.300", "pink.600")}
             p={2}
             alignSelf={"flex-start"}
@@ -60,7 +60,7 @@ export default function SplitWithImage() {
             영상이 담긴 프로필을 <br />
             포트폴리오로 활용할 수 있습니다.
           </Heading>
-          <Text color={"gray.500"} fontSize={"lg"}>
+          <Text color={"gray.500"} fontSize={"2xl"}>
             사진과 글만 담긴 프로필은 `나`를 표현하기 어렵습니다.
           </Text>
           <Stack
@@ -70,6 +70,7 @@ export default function SplitWithImage() {
                 borderColor={useColorModeValue("gray.100", "gray.700")}
               />
             }
+            fontSize={"xl"}
           >
             <Feature
               icon={

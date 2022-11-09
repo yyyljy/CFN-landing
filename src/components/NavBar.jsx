@@ -309,28 +309,26 @@ const NAV_ITEMS = [
     ],
   },
   {
-    label: "Community",
-    children: [
-      {
-        label: "자유게시판",
-        href: "#",
-      },
-      {
-        label: "참여극장",
-        href: "#",
-      },
-    ],
-  },
-  {
     label: "Recruits",
     children: [
       {
         label: "배우 / 스탭",
         href: "#",
       },
-      { label: "영상 / 장면", href: "#" },
-      { label: "활동 보상", href: "#" },
-      { label: "펀딩 리워드", href: "#" },
+    ],
+  },
+  {
+    label: "Community",
+    children: [
+      {
+        label: "게시판",
+        subLabel: "자유게시판, 로케이션 등",
+        href: "#",
+      },
+      {
+        label: "참여극장",
+        href: "#",
+      },
     ],
   },
 ];

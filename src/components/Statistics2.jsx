@@ -10,8 +10,8 @@ import {
   useColorModeValue,
 } from "@chakra-ui/react";
 
-import { GiTakeMyMoney, GiPresent } from "react-icons/gi";
-import { BiTrendingDown } from "react-icons/bi";
+import { TfiWrite } from "react-icons/tfi";
+import { BiCameraMovie } from "react-icons/bi";
 
 function StatsCard(props) {
   const { title, stat, icon } = props;
@@ -21,7 +21,7 @@ function StatsCard(props) {
       py={"5"}
       shadow={"xl"}
       border={"3px solid"}
-      borderColor={useColorModeValue("pink.300", "pink.300")}
+      borderColor={useColorModeValue("orange.300", "orange.300")}
       rounded={"lg"}
     >
       <Flex justifyContent={"space-around"}>
@@ -55,17 +55,9 @@ export default function BasicStatistics() {
       h={"100vh"}
       pos={"relative"}
     >
-      <Box
-        w={"60%"}
-        h={"25%"}
-        bgGradient={"linear(to-b,white,pink.200)"}
-        pos={"absolute"}
-        zIndex={-3}
-        filter={"blur(150px)"}
-      ></Box>
       <chakra.h1
         textAlign={"center"}
-        fontSize={"4xl"}
+        fontSize={"6xl"}
         py={10}
         fontWeight={"bold"}
       >
@@ -74,24 +66,19 @@ export default function BasicStatistics() {
           bgClip={"text"}
           as={"span"}
         >
-          NFTs
+          Community
         </Text>
       </chakra.h1>
-      <SimpleGrid columns={{ base: 2, md: 3 }} spacing={{ base: 5, lg: 8 }}>
+      <SimpleGrid columns={{ base: 2, md: 2 }} spacing={{ base: 5, lg: 8 }}>
         <StatsCard
-          title={"배우/스텝"}
-          stat={"사진"}
-          icon={<GiTakeMyMoney size={"5em"} />}
+          title={"게시판"}
+          stat={"의견 나눔"}
+          icon={<TfiWrite size={"5em"} />}
         />
         <StatsCard
-          title={"리워드"}
-          stat={"NFT"}
-          icon={<GiPresent size={"5em"} />}
-        />
-        <StatsCard
-          title={"블록체인"}
-          stat={"투명성 보장으로 리스크 감소"}
-          icon={<BiTrendingDown size={"5em"} />}
+          title={"참여극장"}
+          stat={"영화 토론"}
+          icon={<BiCameraMovie size={"5em"} />}
         />
       </SimpleGrid>
     </Flex>
