@@ -11,7 +11,9 @@ import {
   useColorModeValue,
   Box,
 } from "@chakra-ui/react";
-import { IoLogoBitcoin, IoWalletSharp, IoJournalSharp } from "react-icons/io5";
+import { CgProfile } from "react-icons/cg";
+import { BiMoviePlay } from "react-icons/bi";
+import { FaReact } from "react-icons/fa";
 import securityImage from "@assets/security.png";
 import profileImage from "@assets/profile.png";
 
@@ -73,21 +75,17 @@ export default function SplitWithImage() {
             fontSize={"xl"}
           >
             <Feature
-              icon={
-                <Icon as={IoWalletSharp} color={"purple.500"} w={5} h={5} />
-              }
+              icon={<Icon as={CgProfile} color={"purple.500"} w={5} h={5} />}
               iconBg={useColorModeValue("yellow.100", "yellow.900")}
               text={"사진과 영상 업로드만으로 템플릿 형태의 포트폴리오 제작"}
             />
             <Feature
-              icon={<Icon as={IoLogoBitcoin} color={"green.500"} w={5} h={5} />}
+              icon={<Icon as={BiMoviePlay} color={"green.500"} w={5} h={5} />}
               iconBg={useColorModeValue("green.100", "green.900")}
               text={"영상과 사진이 담긴 프로필"}
             />
             <Feature
-              icon={
-                <Icon as={IoJournalSharp} color={"purple.500"} w={5} h={5} />
-              }
+              icon={<Icon as={FaReact} color={"purple.500"} w={5} h={5} />}
               iconBg={useColorModeValue("purple.100", "purple.900")}
               text={"공유와 열람의 제한이 없는 웹페이지 형태의 포트폴리오"}
             />
