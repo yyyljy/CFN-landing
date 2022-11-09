@@ -13,6 +13,7 @@ import {
 } from "@chakra-ui/react";
 import { IoLogoBitcoin, IoWalletSharp, IoJournalSharp } from "react-icons/io5";
 import securityImage from "@assets/security.png";
+import profileImage from "@assets/profile.png";
 
 const Feature = ({ text, icon, iconBg }) => {
   return (
@@ -45,19 +46,22 @@ export default function SplitWithImage() {
         <Stack spacing={4}>
           <Text
             textTransform={"uppercase"}
-            color={"blue.400"}
+            color={"white"}
             fontWeight={600}
-            fontSize={"sm"}
-            bg={useColorModeValue("green.100", "pink.600")}
+            fontSize={"lg"}
+            bg={useColorModeValue("orange.300", "pink.600")}
             p={2}
             alignSelf={"flex-start"}
             rounded={"md"}
           >
-            비담과 함께라면
+            CFN과 함께라면
           </Text>
-          <Heading>당신의 비밀을 간직할 수 있습니다.</Heading>
+          <Heading>
+            영상이 담긴 프로필을 <br />
+            포트폴리오로 활용할 수 있습니다.
+          </Heading>
           <Text color={"gray.500"} fontSize={"lg"}>
-            어떤 비밀을 간직하고 싶으신가요
+            사진과 글만 담긴 프로필은 `나`를 표현하기 어렵습니다.
           </Text>
           <Stack
             spacing={4}
@@ -72,33 +76,24 @@ export default function SplitWithImage() {
                 <Icon as={IoWalletSharp} color={"purple.500"} w={5} h={5} />
               }
               iconBg={useColorModeValue("yellow.100", "yellow.900")}
-              text={
-                "계좌 정보와 금융 정보를 비담에서 보관하고 관리할 수 있습니다."
-              }
+              text={"사진과 영상 업로드만으로 템플릿 형태의 포트폴리오 제작"}
             />
             <Feature
               icon={<Icon as={IoLogoBitcoin} color={"green.500"} w={5} h={5} />}
               iconBg={useColorModeValue("green.100", "green.900")}
-              text={"블록체인 토큰 또한 비담에서 종합 관리할 수 있습니다."}
+              text={"영상과 사진이 담긴 프로필"}
             />
             <Feature
               icon={
                 <Icon as={IoJournalSharp} color={"purple.500"} w={5} h={5} />
               }
               iconBg={useColorModeValue("purple.100", "purple.900")}
-              text={
-                "누구한테도 보여주고 싶지 않은 비밀 이야기 비담에서 간직할 수 있습니다."
-              }
+              text={"공유와 열람의 제한이 없는 웹페이지 형태의 포트폴리오"}
             />
           </Stack>
         </Stack>
         <Flex>
-          <Image
-            rounded={"full"}
-            alt={"feature image"}
-            src={securityImage}
-            objectFit={"cover"}
-          />
+          <Image alt={"feature image"} src={profileImage} objectFit={"cover"} />
         </Flex>
       </SimpleGrid>
     </Flex>

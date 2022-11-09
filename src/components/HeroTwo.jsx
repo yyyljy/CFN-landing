@@ -26,7 +26,7 @@ export default function CallToActionWithAnnotation() {
             fontSize={{ base: "2xl", sm: "4xl", md: "6xl" }}
             lineHeight={"110%"}
           >
-            비밀을 담아 주세요 <br />
+            비밀?? <br />
             <Text as={"span"} color={"pink.400"}>
               오직 당신만의
             </Text>

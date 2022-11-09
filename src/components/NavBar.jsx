@@ -58,6 +58,7 @@ export default function WithSubnavigation() {
             textAlign={useBreakpointValue({ base: "center", md: "left" })}
             fontFamily={"SEBANG_Gothic_Bold"}
             color={useColorModeValue("gray.800", "white")}
+            fontSize={"xl"}
           >
             CFN
           </Text>
@@ -70,22 +71,53 @@ export default function WithSubnavigation() {
         <Stack
           flex={{ base: 1, md: 0 }}
           justify={"flex-end"}
+          alignItems={"center"}
           direction={"row"}
-          spacing={6}
+          spacing={2}
         >
+          <Button
+            display={{ base: "none", md: "inline-flex" }}
+            fontSize={"md"}
+            fontWeight={600}
+            color={"white"}
+            bg={"blue.400"}
+            href={"#"}
+            _hover={{
+              bg: "blue.300",
+            }}
+          >
+            Kaikas
+          </Button>
+          <Text>(</Text>
           <Button
             display={{ base: "none", md: "inline-flex" }}
             fontSize={"sm"}
             fontWeight={600}
             color={"white"}
-            bg={"pink.400"}
+            bg={"red.400"}
+            size="xs"
             href={"#"}
             _hover={{
-              bg: "pink.300",
+              bg: "red.300",
             }}
           >
-            Sign Up
+            Google
           </Button>
+          <Button
+            display={{ base: "none", md: "inline-flex" }}
+            fontSize={"sm"}
+            fontWeight={600}
+            color={"pink.800"}
+            bg={"yellow.400"}
+            size="xs"
+            href={"#"}
+            _hover={{
+              bg: "yellow.300",
+            }}
+          >
+            Kakao
+          </Button>
+          <Text>)</Text>
         </Stack>
       </Flex>
 
@@ -102,7 +134,7 @@ const DesktopNav = () => {
   const popoverContentBgColor = useColorModeValue("white", "gray.800");
 
   return (
-    <Stack direction={"row"} spacing={4}>
+    <Stack pt={"2px"} direction={"row"} spacing={4}>
       {NAV_ITEMS.map((navItem) => (
         <Box key={navItem.label}>
           <Popover trigger={"hover"} placement={"bottom-start"}>
@@ -165,7 +197,13 @@ const DesktopSubNav = ({ label, href, subLabel }) => {
           >
             {label}
           </Text>
-          <Text fontSize={"sm"}>{subLabel}</Text>
+          <Text
+            transition={"all 0.3s ease"}
+            fontSize={"sm"}
+            _groupHover={{ color: "orange.700" }}
+          >
+            {subLabel}
+          </Text>
         </Box>
         <Flex
           transition={"all .3s ease"}
@@ -255,13 +293,7 @@ const NAV_ITEMS = [
     label: "CrowdFunding",
     children: [
       {
-        label: "Explore Design Work",
-        subLabel: "Trending Design to inspire you",
-        href: "#",
-      },
-      {
-        label: "New & Noteworthy",
-        subLabel: "Up-and-coming Designers",
+        label: "독립영화 제작 비용",
         href: "#",
       },
     ],
@@ -270,23 +302,32 @@ const NAV_ITEMS = [
     label: "Profiles",
     children: [
       {
-        label: "Job Board",
-        subLabel: "Find your dream design job",
-        href: "#",
-      },
-      {
-        label: "Freelance Projects",
-        subLabel: "An exclusive list for contract work",
+        label: "포트폴리오",
+        subLabel: "(ref. Git)",
         href: "#",
       },
     ],
   },
   {
-    label: "Portfoilio",
-    href: "#",
+    label: "Recruits",
+    children: [
+      {
+        label: "커뮤니티",
+        subLabel: "(ref. 필름메이커스)",
+        href: "#",
+      },
+    ],
   },
   {
-    label: "Recruits",
-    href: "#",
+    label: "NFTs",
+    children: [
+      {
+        label: "배우 / 스탭",
+        href: "#",
+      },
+      { label: "영상 / 장면", href: "#" },
+      { label: "활동 보상", href: "#" },
+      { label: "펀딩 리워드", href: "#" },
+    ],
   },
 ];

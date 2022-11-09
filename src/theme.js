@@ -11,8 +11,8 @@ const theme = extendTheme({
     },
   },
   fonts: {
-    body: `"ChosunCentennial", sans-serif`,
-    heading: `"ChosunCentennial", sans-serif`,
+    body: `"SEBANG_Gothic_Bold", sans-serif`,
+    heading: `"SEBANG_Gothic_Bold", sans-serif`,
   },
 });
 

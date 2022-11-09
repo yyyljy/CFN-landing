@@ -15,8 +15,8 @@ function App() {
       <Fonts />
       <NavBar />
       <Hero />
-      <Features />
       <Statistics />
+      <Features />
       <ThreeTierPricing />
       <HeroTwo />
       <Footer />

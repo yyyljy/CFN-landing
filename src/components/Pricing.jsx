@@ -54,7 +54,7 @@ export default function SplitWithImage() {
             alignSelf={"flex-start"}
             rounded={"md"}
           >
-            비담과 함께라면
+            구인 / 구직 게시판
           </Text>
           <Heading>당신의 비밀을 간직할 수 있습니다.</Heading>
           <Text color={"gray.500"} fontSize={"lg"}>
